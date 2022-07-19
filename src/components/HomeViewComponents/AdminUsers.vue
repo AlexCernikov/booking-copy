@@ -27,29 +27,15 @@ export default defineComponent({
   components: {
     SpaceItemComponent,
   },
-  data() {
-    return {
-      space: [
-        {
-          id: 1,
-          name: 'Shared Table',
-          description: 'Comfortable place wich you can take for a long period of time',
-          imgUrl: 'image1.png',
-        },
-        {
-          id: 2,
-          name: 'Private Space',
-          description: 'Comfortable place wich you can take for a long period of time',
-          imgUrl: 'image2.png',
-        },
-        {
-          id: 3,
-          name: 'Meeting Room',
-          description: 'Comfortable place wich you can take for a long period of time',
-          imgUrl: 'image3.png',
-        },
-      ],
-    };
+  props: {
+    show: {
+      type: Function,
+    },
+  },
+  methods: {
+    show() {
+      console.log('show');
+    },
   },
 });
 </script>

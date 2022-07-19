@@ -2,7 +2,13 @@
 <!-- eslint-disable max-len -->
  <section class="admin-nav">
     <div class="container">
-      <NavBar />
+      <div class="nav-items">
+        <NavBar
+      v-for="(item, index) in navBar"
+          :key="index"
+          :navTitle="item.navTitle"
+      />
+      </div>
     </div>
  </section>
 </template>
@@ -20,22 +26,15 @@ export default defineComponent({
         {
           id: 1,
           navTitle: 'Users',
-        }
-      ]
+        },
+        {
+          id: 2,
+          navTitle: 'Reservation',
+        },
+      ],
     };
   },
-    name: 'adminNavBar',
-  props: {
-    name: {
-      type: String,
-    },
-    description: {
-      type: String,
-    },
-    imgUrl: {
-      type: String,
-    },
-  },
+  name: 'adminNavBar',
 });
 </script>
 
@@ -50,5 +49,11 @@ export default defineComponent({
 }
 a{
   text-decoration: none;
+}
+.nav-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 </style>
